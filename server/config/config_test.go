@@ -15,7 +15,7 @@ func TestNewConfig(t *testing.T) {
 
 func TestTemplateGeneration(t *testing.T) {
 	c := config.New()
-	txt, err := ioutil.ReadFile("./templates/server-config.tpl")
+	txt, err := ioutil.ReadFile("./templates/openvpn-server-config.tpl")
 	assert.Nil(t, err)
 
 	_, err = config.GetText(string(txt), c)
