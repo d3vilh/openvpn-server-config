@@ -18,8 +18,8 @@ server {{ .Server }}}
 route {{ .Route }}
 ifconfig-pool-persist {{ .IfconfigPoolPersist }}
 push  {{ .PushRoute }}
-push {{ .DNSServer1 }}
-push {{ .DNSServer2 }}
+push "dhcp-option DNS {{ .DNSServer1 }}"
+push "dhcp-option DNS {{ .DNSServer2 }}"
 
 keepalive {{ .Keepalive }}
 comp-lzo
