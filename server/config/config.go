@@ -25,8 +25,8 @@ var defaultConfig = Config{
 	Route:               "10.0.71.0 255.255.255.0",
 	IfconfigPoolPersist: "pki/ipp.txt",
 	PushRoute:           "route \"10.0.60.0 255.255.255.0\"",
-	DNSServer1:          "dhcp-option DNS 8.8.8.8",
-	DNSServer2:          "dhcp-option DNS 1.0.0.1",
+	DNSServer1:          "8.8.8.8",
+	DNSServer2:          "1.0.0.1",
 	Keepalive:           "10 120",
 	MaxClients:          100,
 }
