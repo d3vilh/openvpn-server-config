@@ -3,7 +3,7 @@ package config
 // html/template changed to text/template
 import (
 	"bytes"
-	"io/ioutil"
+	"os"
 	"text/template"
 )
 
@@ -77,7 +77,7 @@ func GetText(tpl string, c Config) (string, error) {
 
 // SaveToFile reads teamplate and writes result to destination file
 func SaveToFile(tplPath string, c Config, destPath string) error {
-	template, err := ioutil.ReadFile(tplPath)
+	template, err := os.ReadFile(tplPath)
 	if err != nil {
 		return err
 	}
@@ -87,5 +87,5 @@ func SaveToFile(tplPath string, c Config, destPath string) error {
 		return err
 	}
 
-	return ioutil.WriteFile(destPath, []byte(str), 0644)
+	return os.WriteFile(destPath, []byte(str), 0644)
 }
