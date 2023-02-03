@@ -27,6 +27,7 @@ var defaultConfig = Config{
 	PushRoute:           "10.0.60.0 255.255.255.0",
 	DNSServer1:          "8.8.8.8",
 	DNSServer2:          "1.0.0.1",
+	RedirectGW:          "push \"redirect-gateway def1 bypass-dhcp\"",
 	Keepalive:           "10 120",
 	MaxClients:          100,
 }
@@ -54,6 +55,7 @@ type Config struct {
 	PushRoute           string
 	DNSServer1          string
 	DNSServer2          string
+	RedirectGW          string
 	Keepalive           string
 	MaxClients          int
 }

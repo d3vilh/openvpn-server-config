@@ -34,7 +34,8 @@ topology subnet
 route 10.0.71.0 255.255.255.0
 
 client-config-dir /etc/openvpn/staticclients
-push "redirect-gateway def1 bypass-dhcp"
+{{ .RedirectGW }}
+#push "redirect-gateway def1 bypass-dhcp"
 
 ncp-ciphers AES-256-GCM:AES-192-GCM:AES-128-GCM
 
