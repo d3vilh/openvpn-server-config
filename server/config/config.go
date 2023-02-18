@@ -17,7 +17,6 @@ var defaultConfig = Config{
 	Cert:                "pki/issued/server.crt",
 	Key:                 "pki/private/server.key",
 	Cipher:              "AES-256-CBC",
-	Keysize:             256,
 	Auth:                "SHA512",
 	Dh:                  "pki/dh.pem",
 	Server:              "10.0.70.0 255.255.255.0",
@@ -43,10 +42,9 @@ type Config struct {
 	Cert string
 	Key  string
 
-	Cipher  string
-	Keysize int
-	Auth    string
-	Dh      string
+	Cipher string
+	Auth   string
+	Dh     string
 
 	Server              string
 	Route               string
