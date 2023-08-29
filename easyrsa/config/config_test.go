@@ -4,7 +4,7 @@ import (
 	"io/ioutil"
 	"testing"
 
-	"github.com/d3vilh/openvpn-server-config/client-config/config"
+	"github.com/d3vilh/openvpn-server-config/easyrsa/config"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -15,7 +15,7 @@ func TestNewConfig(t *testing.T) {
 
 func TestTemplateGeneration(t *testing.T) {
 	c := config.New()
-	txt, err := ioutil.ReadFile("./templates/openvpn-client-config.tpl")
+	txt, err := ioutil.ReadFile("./templates/easyrsa-vars.tpl")
 	assert.Nil(t, err)
 
 	_, err = config.GetText(string(txt), c)
