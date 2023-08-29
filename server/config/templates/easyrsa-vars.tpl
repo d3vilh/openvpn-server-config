@@ -1,0 +1,13 @@
+set_var EASYRSA_DN           "{{ .EasyrsaDn }}"
+set_var EASYRSA_REQ_COUNTRY  "{{ .EasyrsaReqCountry }}"
+set_var EASYRSA_REQ_PROVINCE "{{ .EasyrsaReqProvince }}"
+set_var EASYRSA_REQ_CITY     "{{ .EasyrsaReqCity }}"
+set_var EASYRSA_REQ_ORG      "{{ .EasyrsaReqOrg }}"
+set_var EASYRSA_REQ_EMAIL    "{{ .EasyrsaReqEmail }}"
+set_var EASYRSA_REQ_OU       "{{ .EasyrsaReqOu }}"
+set_var EASYRSA_REQ_CN       "{{ .EasyrsaReqCn }}"
+set_var EASYRSA_KEY_SIZE     {{ .EasyrsaKeySize }}
+set_var EASYRSA_CA_EXPIRE    {{ .EasyrsaCaExpire }}
+set_var EASYRSA_CERT_EXPIRE  {{ .EasyrsaCertExpire }}
+set_var EASYRSA_CERT_RENEW   {{ .EasyrsaCertRenew }}
+set_var EASYRSA_CRL_DAYS     {{ .EasyrsaCrlDays }}
