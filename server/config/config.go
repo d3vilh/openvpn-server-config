@@ -16,6 +16,9 @@ var defaultConfig = Config{
 	Ca:                       "pki/ca.crt",
 	Cert:                     "pki/issued/server.crt",
 	Key:                      "pki/private/server.key",
+	TLSControlChannel:        "pki/ta.key",
+	TLSMinVersion:            "1.2",
+	TLSRemoteCert:            "client",
 	Cipher:                   "AES-256-CBC",
 	Auth:                     "SHA512",
 	Dh:                       "pki/dh.pem",
@@ -53,6 +56,10 @@ type Config struct {
 	Ca   string
 	Cert string
 	Key  string
+
+	TLSControlChannel string
+	TLSMinVersion     string
+	TLSRemoteCert     string
 
 	Cipher string
 	Auth   string
