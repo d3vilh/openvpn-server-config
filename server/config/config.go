@@ -30,6 +30,9 @@ var defaultConfig = Config{
 	RedirectGW:          "push \"redirect-gateway def1 bypass-dhcp\"",
 	Keepalive:           "10 120",
 	MaxClients:          100,
+	CustomOptOne:        "#Custom Option One",
+	CustomOptTwo:        "#Custom Option Two",
+	CustomOptThree:      "#Custom Option Three",
 }
 
 // Config model
@@ -58,6 +61,9 @@ type Config struct {
 	RedirectGW          string
 	Keepalive           string
 	MaxClients          int
+	CustomOptOne        string
+	CustomOptTwo        string
+	CustomOptThree      string
 }
 
 // New returns config object with default values
