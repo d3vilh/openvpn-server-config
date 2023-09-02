@@ -19,6 +19,7 @@ var defaultConfig = Config{
 	Cipher:                   "AES-256-CBC",
 	Auth:                     "SHA512",
 	Dh:                       "pki/dh.pem",
+	Crl:                      "pki/crl.pem",
 	Server:                   "10.0.70.0 255.255.255.0",
 	Route:                    "10.0.71.0 255.255.255.0",
 	IfconfigPoolPersist:      "pki/ipp.txt",
@@ -35,6 +36,8 @@ var defaultConfig = Config{
 	OVConfigNcpCiphers:       "AES-256-GCM:AES-192-GCM:AES-128-GCM",
 	OVConfigStatusLog:        "/var/log/openvpn/openvpn-status.log",
 	OVConfigStatusLogVersion: 2,
+	OVConfigUser:             "nobody",
+	OVConfigGroup:            "nogroup",
 	CustomOptOne:             "#Custom Option One",
 	CustomOptTwo:             "#Custom Option Two",
 	CustomOptThree:           "#Custom Option Three",
@@ -54,6 +57,7 @@ type Config struct {
 	Cipher string
 	Auth   string
 	Dh     string
+	Crl    string
 
 	Server              string
 	Route               string
@@ -73,6 +77,8 @@ type Config struct {
 	OVConfigNcpCiphers       string
 	OVConfigStatusLog        string
 	OVConfigStatusLogVersion int
+	OVConfigUser             string
+	OVConfigGroup            string
 	CustomOptOne             string
 	CustomOptTwo             string
 	CustomOptThree           string
