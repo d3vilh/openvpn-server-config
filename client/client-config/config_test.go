@@ -4,21 +4,21 @@ import (
 	"io/ioutil"
 	"testing"
 
-	"github.com/d3vilh/openvpn-server-config/config/client-config/config"
+	clientconfig "github.com/d3vilh/openvpn-server-config/config/client-config/config"
 	"github.com/stretchr/testify/assert"
 )
 
 func TestNewConfig(t *testing.T) {
-	c := config.New()
+	c := clientconfig.New()
 	assert.Equal(t, c.Auth, "SHA256")
 }
 
 func TestTemplateGeneration(t *testing.T) {
-	c := config.New()
+	c := clientconfig.New()
 	txt, err := ioutil.ReadFile("./templates/openvpn-client-config.tpl")
 	assert.Nil(t, err)
 
-	_, err = config.GetText(string(txt), c)
+	_, err = clientconfig.GetText(string(txt), c)
 	assert.Nil(t, err)
 }
 

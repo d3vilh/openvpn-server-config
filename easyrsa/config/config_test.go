@@ -4,21 +4,21 @@ import (
 	"io/ioutil"
 	"testing"
 
-	"github.com/d3vilh/openvpn-server-config/easyrsa/config"
+	easyrsaconfig "github.com/d3vilh/openvpn-server-config/easyrsa/config"
 	"github.com/stretchr/testify/assert"
 )
 
 func TestNewConfig(t *testing.T) {
-	c := config.New()
+	c := easyrsaconfig.New()
 	assert.Equal(t, c.Auth, "SHA256")
 }
 
 func TestTemplateGeneration(t *testing.T) {
-	c := config.New()
+	c := easyrsaconfig.New()
 	txt, err := ioutil.ReadFile("./templates/easyrsa-vars.tpl")
 	assert.Nil(t, err)
 
-	_, err = config.GetText(string(txt), c)
+	_, err = easyrsaconfig.GetText(string(txt), c)
 	assert.Nil(t, err)
 }
 
