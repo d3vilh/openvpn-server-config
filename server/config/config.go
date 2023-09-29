@@ -11,6 +11,8 @@ import (
 var defaultConfig = Config{
 	FuncMode:                 0,
 	Management:               "0.0.0.0 2080",
+	ScriptSecurity:           "#script-security 2",
+	UserPassVerify:           "#auth-user-pass-verify /opt/app/bin/oath.sh via-file",
 	Device:                   "tun",
 	Port:                     1194,
 	Proto:                    "udp",
@@ -42,8 +44,6 @@ var defaultConfig = Config{
 	OVConfigLogVerbose:       3,
 	OVConfigStatusLog:        "/var/log/openvpn/openvpn-status.log",
 	OVConfigStatusLogVersion: 2,
-	ScriptSecurity:           "#script-security 2",
-	UserPassVerify:           "#auth-user-pass-verify /opt/app/bin/oath.sh via-file",
 	CustomOptOne:             "# Custom Option One",
 	CustomOptTwo:             "# Custom Option Two\n# client-to-client",
 	CustomOptThree:           "# Custom Option Three\n# push \"route 0.0.0.0 255.255.255.255 net_gateway\"\n# push block-outside-dns",
@@ -51,11 +51,13 @@ var defaultConfig = Config{
 
 // Config model
 type Config struct {
-	FuncMode   int // 0 = standard authentication (cert, cert + password), 1 = 2FA authentication (cert + OTP)
-	Management string
-	Device     string
-	Port       int
-	Proto      string
+	FuncMode       int // 0 = standard authentication (cert, cert + password), 1 = 2FA authentication (cert + OTP)
+	Management     string
+	ScriptSecurity string
+	UserPassVerify string
+	Device         string
+	Port           int
+	Proto          string
 
 	OVConfigTopology string
 	Keepalive        string
@@ -94,8 +96,6 @@ type Config struct {
 	OVConfigStatusLog        string
 	OVConfigStatusLogVersion int
 
-	ScriptSecurity string
-	UserPassVerify string
 	CustomOptOne   string
 	CustomOptTwo   string
 	CustomOptThree string
