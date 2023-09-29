@@ -47,7 +47,8 @@ verb {{ .OVConfigLogVerbose }}
 status {{ .OVConfigStatusLog }}
 status-version {{ .OVConfigStatusLogVersion }}
 
-{{ .Auth2FA }}
+{{ .ScriptSecurity }}
+{{ .UserPassVerity }}
 
 {{ .CustomOptOne }}
 {{ .CustomOptTwo }}
