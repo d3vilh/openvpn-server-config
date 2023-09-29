@@ -42,6 +42,7 @@ var defaultConfig = Config{
 	OVConfigLogVerbose:       3,
 	OVConfigStatusLog:        "/var/log/openvpn/openvpn-status.log",
 	OVConfigStatusLogVersion: 2,
+	Auth2FA:                  "#auth-user-pass-verify /opt/app/bin/oath.sh via-file\n#script-security 2\n",
 	CustomOptOne:             "# Custom Option One",
 	CustomOptTwo:             "# Custom Option Two\n# client-to-client",
 	CustomOptThree:           "# Custom Option Three\n# push \"route 0.0.0.0 255.255.255.255 net_gateway\"\n# push block-outside-dns",
@@ -92,6 +93,7 @@ type Config struct {
 	OVConfigStatusLog        string
 	OVConfigStatusLogVersion int
 
+	Auth2FA        string
 	CustomOptOne   string
 	CustomOptTwo   string
 	CustomOptThree string
