@@ -16,6 +16,10 @@ var defaultConfig = Config{
 	RedirectGateway:   "redirect-gateway def1",
 	Auth:              "SHA256",
 	Ca:                "ca.crt",
+	AuthUserPass:      "", // "auth-user-pass" when 2fa
+	CustomConfOne:     "Custom Option One",
+	CustomConfTwo:     "Custom Option Two",
+	CustomConfThree:   "Custom Option Three",
 }
 
 // Config model
@@ -34,6 +38,11 @@ type Config struct {
 	Cipher          string
 	RedirectGateway string
 	Auth            string
+	AuthUserPass    string
+
+	CustomConfOne   string
+	CustomConfTwo   string
+	CustomConfThree string
 }
 
 // New returns config object with default values
