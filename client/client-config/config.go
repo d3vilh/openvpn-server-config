@@ -17,9 +17,9 @@ var defaultConfig = Config{
 	Auth:              "SHA256",
 	Ca:                "ca.crt",
 	AuthUserPass:      "", // "auth-user-pass" when 2fa
-	CustomConfOne:     "Custom Option One",
-	CustomConfTwo:     "Custom Option Two",
-	CustomConfThree:   "Custom Option Three",
+	CustomConfOne:     "#Custom Option One",
+	CustomConfTwo:     "#Custom Option Two",
+	CustomConfThree:   "#Custom Option Three",
 }
 
 // Config model
