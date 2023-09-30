@@ -9,10 +9,10 @@ import (
 
 // Don't think these defaults are ever used -- see models/models.go
 var defaultConfig = Config{
-	FuncMode:                 0,
+	FuncMode:                 0, // 0 = standard authentication (cert, cert + password), 1 = 2FA authentication (cert + OTP)
 	Management:               "0.0.0.0 2080",
-	ScriptSecurity:           "#script-security 2",
-	UserPassVerify:           "#auth-user-pass-verify /opt/app/bin/oath.sh via-file",
+	ScriptSecurity:           "",
+	UserPassVerify:           "",
 	Device:                   "tun",
 	Port:                     1194,
 	Proto:                    "udp",

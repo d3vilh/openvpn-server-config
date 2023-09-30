@@ -7,6 +7,7 @@ import (
 )
 
 var defaultConfig = Config{
+	FuncMode:          0, // 0 = standard authentication (cert, cert + password), 1 = 2FA authentication (cert + OTP)
 	Device:            "tun",
 	Proto:             "udp",
 	ServerAddress:     "127.0.0.1",
@@ -24,6 +25,7 @@ var defaultConfig = Config{
 
 // Config model
 type Config struct {
+	FuncMode          int
 	Device            string
 	ServerAddress     string
 	Port              int
